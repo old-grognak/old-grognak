@@ -24,9 +24,10 @@
 
 примеры настроек 
 <details>
-<summary>config spine1</summary>
-```
-  spine1#show running-config 
+  <summary>config spine1</summary>
+  
+  ```
+spine1#show running-config 
 ! Command: show running-config
 ! device: spine1 (vEOS-lab, EOS-4.28.1F)
 !
@@ -96,11 +97,13 @@ router ospf 100
    max-lsa 12000
 !
 end
-```
+
+  ```
 </details>
 
 <details>
 <summary>config leaf1</summary>
+  
 ```
 spine2#show running-config 
 ! Command: show running-config
@@ -172,12 +175,14 @@ router ospf 100
    max-lsa 12000
 !
 end
+  
 ``` 
 </details>
 
 <details>
-<summary>spine1#sho ip route ospf</summary>
-``` 
+  <summary>spine1#sho ip route ospf</summary>
+
+  ```
 spine1#sho ip route ospf
 
 VRF: default
@@ -205,12 +210,14 @@ Codes: C - connected, S - static, K - kernel,
  O        10.2.2.2/31 [110/20] via 10.2.1.3, Ethernet2
  O        10.2.2.4/31 [110/20] via 10.2.1.5, Ethernet3
  O        10.2.2.6/31 [110/20] via 10.2.1.7, Ethernet4
-``` 
+
+   ``` 
 </details>
 
-<details> 
-<summary>spine1#show ip ospf database</summary> 
-``` 
+<details>
+  <summary>spine1#show ip ospf database</summary> 
+  
+  ``` 
 spine1#show ip ospf database 
 
             OSPF Router with ID(10.0.1.0) (Instance ID 100) (VRF default)
@@ -224,12 +231,13 @@ Link ID         ADV Router      Age         Seq#         Checksum Link count
 10.0.0.4        10.0.0.4        131         0x80000005   0x90a0   5
 10.0.0.3        10.0.0.3        242         0x80000006   0x43f7   5
 10.0.1.0        10.0.1.0        138         0x80000007   0x1e6c   9
-``` 
+   ```
 </details>
-
+проверка доступности
 <details>
-<summary>leaf1#ping 10.x.x.x</summary>
-``` 
+  <summary>leaf1#ping 10.x.x.x</summary>
+
+  ```
 leaf1#ping 10.0.0.2
 PING 10.0.0.2 (10.0.0.2) 72(100) bytes of data.
 80 bytes from 10.0.0.2: icmp_seq=1 ttl=63 time=5.93 ms
@@ -241,6 +249,7 @@ PING 10.0.0.2 (10.0.0.2) 72(100) bytes of data.
 --- 10.0.0.2 ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 25ms
 rtt min/avg/max/mdev = 4.192/4.815/5.934/0.653 ms, ipg/ewma 6.375/5.335 ms
+
 leaf1#ping 10.0.0.3
 PING 10.0.0.3 (10.0.0.3) 72(100) bytes of data.
 80 bytes from 10.0.0.3: icmp_seq=1 ttl=63 time=6.98 ms
@@ -252,6 +261,7 @@ PING 10.0.0.3 (10.0.0.3) 72(100) bytes of data.
 --- 10.0.0.3 ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 28ms
 rtt min/avg/max/mdev = 4.878/5.446/6.981/0.779 ms, ipg/ewma 7.160/6.186 ms
+
 leaf1#ping 10.0.0.4
 PING 10.0.0.4 (10.0.0.4) 72(100) bytes of data.
 80 bytes from 10.0.0.4: icmp_seq=1 ttl=63 time=6.40 ms
@@ -263,6 +273,7 @@ PING 10.0.0.4 (10.0.0.4) 72(100) bytes of data.
 --- 10.0.0.4 ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 28ms
 rtt min/avg/max/mdev = 4.598/5.139/6.401/0.669 ms, ipg/ewma 7.016/5.735 ms
+
 leaf1#ping 10.2.2.6
 PING 10.2.2.6 (10.2.2.6) 72(100) bytes of data.
 80 bytes from 10.2.2.6: icmp_seq=1 ttl=64 time=3.40 ms
@@ -274,5 +285,5 @@ PING 10.2.2.6 (10.2.2.6) 72(100) bytes of data.
 --- 10.2.2.6 ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 16ms
 rtt min/avg/max/mdev = 2.332/2.987/3.406/0.464 ms, ipg/ewma 4.074/3.199 ms
-``` 
+   ```
 </details>
