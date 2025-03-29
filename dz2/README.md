@@ -172,12 +172,12 @@ router ospf 100
    max-lsa 12000
 !
 end
-```
+``` 
 </details>
 
 <details>
 <summary>spine1#sho ip route ospf</summary>
-```
+``` 
 spine1#sho ip route ospf
 
 VRF: default
@@ -205,12 +205,12 @@ Codes: C - connected, S - static, K - kernel,
  O        10.2.2.2/31 [110/20] via 10.2.1.3, Ethernet2
  O        10.2.2.4/31 [110/20] via 10.2.1.5, Ethernet3
  O        10.2.2.6/31 [110/20] via 10.2.1.7, Ethernet4
-```
+``` 
 </details>
 
-<details>
-<summary>spine1#show ip ospf database</summary>
-```
+<details> 
+<summary>spine1#show ip ospf database</summary> 
+``` 
 spine1#show ip ospf database 
 
             OSPF Router with ID(10.0.1.0) (Instance ID 100) (VRF default)
@@ -224,11 +224,12 @@ Link ID         ADV Router      Age         Seq#         Checksum Link count
 10.0.0.4        10.0.0.4        131         0x80000005   0x90a0   5
 10.0.0.3        10.0.0.3        242         0x80000006   0x43f7   5
 10.0.1.0        10.0.1.0        138         0x80000007   0x1e6c   9
-```
+``` 
 </details>
+
 <details>
 <summary>leaf1#ping 10.x.x.x</summary>
-```
+``` 
 leaf1#ping 10.0.0.2
 PING 10.0.0.2 (10.0.0.2) 72(100) bytes of data.
 80 bytes from 10.0.0.2: icmp_seq=1 ttl=63 time=5.93 ms
@@ -273,5 +274,5 @@ PING 10.2.2.6 (10.2.2.6) 72(100) bytes of data.
 --- 10.2.2.6 ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 16ms
 rtt min/avg/max/mdev = 2.332/2.987/3.406/0.464 ms, ipg/ewma 4.074/3.199 ms
-```
+``` 
 </details>
